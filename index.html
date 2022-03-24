@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>dev.finance$</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <header>
+            <img src="./assets/logo.svg" alt="Logo Dev Finance" />
+        </header>
+
+        <main class="container">
+            <section id="balance">
+                <h2 class="sr-only">Balance</h2>
+                <div class="card">
+                    <h3>
+                        <span>Incomings</span>
+                        <img src="./assets/income.svg" alt="income image" />
+                    </h3>
+                    <p id="total-incomes"></p>
+                </div>
+                <div class="card">
+                    <h3>
+                        <span>Expenses</span>
+                        <img src="./assets/expense.svg" alt="expense image" />
+                    </h3>
+                    <p id="total-expenses"></p>
+                </div>
+                <div class="card total">
+                    <h3>
+                        <span>Total</span>
+                        <img src="./assets/total.svg" alt="total image" />
+                    </h3>
+                    <p id="total"></p>
+                </div>
+            </section>
+            <section id="transaction">
+                <h2 class="sr-only">Transactions</h2>
+
+                <a href="#" class="button-new">+ New Transation</a>
+
+                <table id="data-table">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Value</th>
+                            <th>Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main>
+
+        <div class="modal-overlay">
+            <div class="modal">
+                <div id="form">
+                    <h2>New Transaction</h2>
+                    <form action="" onsubmit="Form.submit(event)">
+                        <div class="input-group">
+                            <label class="sr-only" for="description"></label>
+                            <input
+                                type="text"
+                                id="description"
+                                name="description"
+                                placeholder="Description"
+                            />
+                        </div>
+                        <div class="input-group">
+                            <label class="sr-only" for="amount">Amount</label>
+                            <input
+                                type="number"
+                                step="0.01"
+                                id="amount"
+                                name="amount"
+                                placeholder="0,00"
+                            />
+                            <small class="help"
+                                >Use the - (negative) for expenses and , (comma)
+                                to decimals</small
+                            >
+                        </div>
+                        <div class="input-group">
+                            <label class="sr-only" for="date">Date</label>
+                            <input type="date" id="date" name="date" />
+                        </div>
+                        <div class="input-group actions">
+                            <a href="#" class="button cancel">Cancel</a>
+                            <button id="save">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer>dev finance$ developed by BS</footer>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
